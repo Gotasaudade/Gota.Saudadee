@@ -1,0 +1,167 @@
+@charset "utf-8";
+
+
+@keyframes fadeOutPreloader {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* ---------- Animación de entrada ---------- */
+.imagen-debajo,
+.container,
+.nav-punk {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+html, body {
+  height: 100%;
+  background-color: #050502;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* ---------- Menú punk ---------- */
+.nav-punk {
+  list-style: none;
+  margin: 20px 20px 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  width: fit-content;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  opacity: 90%;
+}
+
+.nav-punk a {
+  display: block;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background-color: #050502;
+  color: #FAFAFA;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.nav-punk a:hover {
+  background-color: #FCFCFC;
+  color: #1A1A16;
+  transform: scale(1.05) rotate(-1deg);
+  text-shadow: 1px 1px 1px #FCFCFC;
+  text-decoration: line-through;
+}
+
+.nav-punk .active {
+  background-color: #0D208C;
+  color: #FCFCFC;
+}
+
+/* ---------- Imagen GIF principal ---------- */
+.imagen-debajo {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  position: relative;
+}
+
+.imagen-debajo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Contenedor y columnas ---------- */
+.container {
+  display: flex;
+  height: 77vh;
+  z-index: 2;
+  position: relative;
+}
+
+.left {
+  flex: 0.3;
+  background-color: #050502;
+  color: #FCFCFC;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right {
+  flex: 0.7;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 3%;
+  opacity: 0.5;
+  transition: background-image 0.9s ease-in-out;
+}
+
+/* ---------- Nombres ---------- */
+.name {
+  font-size: 24px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.name a {
+  color: #FCFCFC;
+  text-decoration: none;
+}
+
+.name:hover,
+.name a:hover {
+  color: #EB0A0A;
+  text-decoration: line-through;
+}
+
+.name a:visited {
+  color: #0D208C;
+  text-decoration: none;
+}
+
+/* ---------- Fondo derecho dinámico ---------- */
+body[data-bg="amin"] .right {
+  background-image: url("../IMG/FOTOGRAFÍA/PORTADAS/0.jpg");
+}
+
+body[data-bg="con"] .right {
+  background-image: url("../IMG/FOTOGRAFÍA/PORTADAS/1.jpg");
+}
+
+body[data-bg="nacini"] .right {
+  background-image: url("../IMG/FOTOGRAFÍA/PORTADAS/2.jpg");
+}
+
+body[data-bg="samuel"] .right {
+  background-image: url("../IMG/FOTOGRAFÍA/PORTADAS/3.jpg");
+}
+
+body[data-bg="Expe"] .right {
+  background-image: url("../IMG/FOTOGRAFÍA/PORTADAS/4.jpg");
+}
